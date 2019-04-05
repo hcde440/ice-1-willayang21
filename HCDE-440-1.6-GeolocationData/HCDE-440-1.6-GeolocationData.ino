@@ -147,7 +147,7 @@ void getGeo() {
       //      root.printTo(Serial);
       //Using .dot syntax, we refer to the variable "location" which is of
       //type GeoData, and place our data into the data structure.
-      location.ip = root["ip"].as<String>();            // we cast the values as Strings b/c
+      location.ip = root["ip"].as<String>();            // cast the values as Strings b/c
       location.cc = root["country_code"].as<String>();  // the 'slots' in GeoData are Strings
       location.cn = root["country_name"].as<String>();
       location.rc = root["region_code"].as<String>();
@@ -163,7 +163,7 @@ void getGeo() {
 
 void getMet(String city) {
   HTTPClient theClient;  // initialize the HTTPClient
-  String apiCall = "http://api.openweathermap.org/data/2.5/weather?q=Seattle"; // stores the base url
+  String apiCall = "http://api.openweathermap.org/data/2.5/weather?q=Seattle"; // store the base url
   apiCall += "&units=imperial&appid=";  // add more conditions
   apiCall += weatherKey;  // add weather api key
   theClient.begin(apiCall);  // start listening for the incoming connection
