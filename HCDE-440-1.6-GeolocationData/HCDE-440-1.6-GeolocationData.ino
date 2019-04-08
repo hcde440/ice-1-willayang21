@@ -1,27 +1,10 @@
-/*ICE #1A
-   Using HCDE_IoT_4_GeoLocation.ino as a starting point, augment the sketch to include
-   a new data type (a struct) called MetData designed to contain name:value pairs from
-   http://openweathermap.org/. You will need to get an API key to use this service, the
-   key is free for low volume development use. Get your key at http://openweathermap.org/api
-   by subscribing to the Current Weather Data api. Examples of the API call are provided in
-   the API documnentation.
-   Wrap your HTTP request in a function called getMet(), which will be similar to getIP()
-   and getGeo(), and print out the data as a message to the Serial Monitor using Imperial
-   units. You should report temperature, humidity, windspeed, wind direction, and cloud
-   conditions. Call the API by city name.
-   
-   One possible solution is provided below, though you should try to find your own solution
-   first based upon previous examples.
-*/
-
-/*ICE #1B
-   To complete this ICE, demonstrate your understanding of this sketch by running
-   the code and providing complete inline commentary, describing how each line of
-   code functions in detail. The completed project will comment every line. Some of
-   this has already been done for you in earlier progressions of this project.
-   This sketch . . . (briefly relate what this sketch does here)
-   
-   If your code differs from this solution, fine. Just comment that code thoroughly.
+/*
+ * This is a sketch that gets the ESP8266 to the WiFi and then connects to api.ipify.org using API key to get
+ * our external IP address. With all that, ESP then connects to api.openweathermap.org using another key as well as the 
+ * location info to get the weather info.
+ * 
+ * Every time ESP uses an api it has to make a HTTP request, parse the string data, transform the data to json format, and 
+ * stores the data we need into the struct (location and conditions) as strings.
 */
 
 #include <ESP8266WiFi.h>
